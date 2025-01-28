@@ -1,0 +1,6 @@
+store the data file and name them in the following format : fabric_<id>_<warp_count>_<weft_count>.jpg
+
+ex: 
+
+fabric_1_30_40.jpg → Warp count: 30, Weft count: 40
+fabric_2_20_25.jpg → Warp count: 20, Weft count: 25
