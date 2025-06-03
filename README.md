@@ -42,13 +42,15 @@ Our implementation combines advanced preprocessing techniques with deep learning
 ### Frontend
 - **React.js**: Interactive UI for image uploading and result visualization
 - **Material UI**: Modern component library for responsive design
-- **Chart.js**: Visualization of thread count metrics
+- **Chart.js**: Visualization of thread count metrics and distributions
 - **Axios**: API communication with backend
+- **React Testing Library**: Component testing framework
 
 ### Backend
 - **FastAPI**: High-performance Python web framework
 - **PyTorch**: Deep learning framework for model inference
 - **OpenCV**: Computer vision library for image processing
+- **Pytest**: Testing framework for backend components
 - **NumPy/SciPy**: Scientific computing for numerical operations
 
 ## 🚀 How It Works
@@ -130,38 +132,67 @@ automated-thread-density-analysis/
 ├── README.md
 ├── LICENSE
 ├── CONTRIBUTING.md
+├── run_frontend_tests.sh    # Script to run frontend tests
+├── run_backend_tests.sh     # Script to run backend tests
+├── setup.sh
 ├── frontend/
 │   ├── public/
 │   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   ├── utils/
+│   │   ├── components/      # UI components
+│   │   ├── services/        # API communication
+│   │   ├── __tests__/       # Unit tests
+│   │   │   ├── components/  # Component tests
+│   │   │   └── services/    # Service tests  
 │   │   └── App.js
 │   ├── package.json
 │   └── README.md
 ├── backend/
 │   ├── api/
-│   │   ├── routes/
-│   │   ├── models/
-│   │   └── services/
-│   ├── ml/
-│   │   ├── model.py
-│   │   ├── preprocessing.py
-│   │   └── thread_counter.py
-│   ├── tests/
-│   ├── main.py
+│   │   ├── routers/         # API endpoints
+│   │   └── models/          # Pydantic models
+│   ├── models/              # Machine learning models
+│   ├── services/            # Business logic
+│   ├── utils/               # Helper utilities
+│   ├── tests/               # Backend tests
+│   │   ├── api/             # API endpoint tests
+│   │   ├── models/          # Model tests
+│   │   ├── services/        # Service tests
+│   │   ├── utils/           # Utility tests
+│   │   └── data/            # Test data
+│   ├── main.py              # Application entry
 │   └── requirements.txt
-├── model/
-│   ├── weights/
-│   ├── training/
-│   └── evaluation/
 └── docs/
     ├── assets/
     ├── model-details.md
     ├── thread-counting.md
     ├── api-spec.md
-    └── examples/
+    └── sample-results.md
+```
+
+## 🧪 Testing
+
+The project includes comprehensive test suites for both frontend and backend:
+
+### Frontend Tests
+Test React components and services with Jest and React Testing Library:
+```bash
+# Run all frontend tests
+./run_frontend_tests.sh
+
+# Or directly with npm
+cd frontend
+npm test
+```
+
+### Backend Tests
+Test FastAPI endpoints, services, and models with pytest:
+```bash
+# Run all backend tests
+./run_backend_tests.sh
+
+# Or directly with pytest
+cd backend
+python -m pytest tests/
 ```
 
 ## 🤝 Contributing
